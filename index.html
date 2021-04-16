@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+     <title>Search Application With Wikipedia API</title>
+     <link rel="stylesheet" href="./sass/style.css">
+     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' integrity='sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==' crossorigin='anonymous'/>
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+     <script src="./javascript/script.js" type="module"></script>
+</head>
+<body>
+     <main>
+          <h1 class="offscreen">search me a wikipedia powered search engine</h1>
+          <section class="searchEntry">
+               <h2 class="offscreen">search term entry</h2>
+               <div class="logo" aria-hidden="true">
+                    <span class="blue">S</span>
+                    <span class="red">e</span>
+                    <span class="yellow">a</span>
+                    <span class="blue">r</span>
+                    <span class="green">c</span>
+                    <span class="red">h</span>
+                    <span class="blue">M</span>
+                    <span class="yellow">e</span>
+                    <span class="red exclaim">!</span>
+               </div>
+               <form class="searchBar" id="searchBar" role="search">
+                    <label for="search" class="offscreen">enter a search team or phrase</label>
+                    <input type="text" id="search" autocomplete="off" role="searchbox">
+                    <div class="none button clear" id="clear" role="button" tabindex="0" aria-label="Clear search terms"><i class="fas fa-times"></i></div>
+                    <button type="submit" class="button searchButton" id="searchButton" aria-label="Submit button"><i class="fas fa-search blue"></i></button>
+               </form>
+          </section>
+          <section class="results">
+               <h2 class="offscreen">search results</h2>
+               <div class="statsBar"><div class="stats" id="stats" aria-live="assertive"></div></div>
+               <div class="searchResults" id="searchResults"></div>
+          </section>
+     </main>
+     <footer>
+          <p><span aria-hidden="true">&lt;&lt;</span>powered by <a href="https://www.wikipedia.org" target="_blank">wikipedia</a><span aria-hidden="true">&lt;&lt;</span></p>
+     </footer>
+</body>
+</html>
