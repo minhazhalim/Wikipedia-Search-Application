@@ -14,25 +14,37 @@ export const retrieveSearchResults = async (searchTerm) => {
      return resultArray;
 };
 const getWikiSearchString = (searchTerm) => {
-     const maxCharacters = getMaxCharacters();
-     const rawSearchString = `https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${searchTerm}&gsrlimit=20&prop=pageimages|extracts&exchars=${maxCharacters}&exintro&explaintext&exlimit=max&format=json&origin=*`;
+     const maximumCharacters = getMaximumCharacters();
+     const rawSearchString = `https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${searchTerm}&gsrlimit=20&prop=pageimages|extracts&exchars=${maximumCharacters}&exintro&explaintext&exlimit=max&format=json&origin=*`;
      const searchString = encodeURI(rawSearchString);
      return searchString;
-}
-const getMaxCharacters = () => {
+};
+export const getSuggestions = async (stringText) => {
+     if(!stringText) return [];
+     const apiUrl = `https://en.wikipedia.org/w/api.php?action=opensearch&search=${encodeURIComponent(stringText)}&limit=10&namespace=0&format=json&origin=*`;
+     try {
+          const response = await fetch(apiUrl);
+          const result = await response.json();
+          return result[1];
+     }catch(error){
+          console.log(error);
+          return [];
+     }
+};
+const getMaximumCharacters = () => {
      const width = window.innerWidth || document.body.clientWidth;
-     let maxCharacters;
-     if(width<414){
-          maxCharacters = 65;
+     let maximumCharacters;
+     if(width < 414){
+          maximumCharacters = 65;
      }
-     if(width>=414 && width<1400){
-          maxCharacters = 100;
+     if(width >= 414 && width < 1400){
+          maximumCharacters = 100;
      }
-     if(width>=1400) {
-          maxCharacters = 130;
+     if(width >= 1400){
+          maximumCharacters = 130;
      }
-     return maxCharacters;
-}
+     return maximumCharacters;
+};
 const requestData = async (searchString) => {
      try {
           const response = await fetch(searchString);
