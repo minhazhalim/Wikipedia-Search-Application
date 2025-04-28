@@ -3,6 +3,7 @@ import {deleteSearchResults,buildSearchResults,clearStatsLine,setStatsLine} from
 import {getSearchTerm,getSuggestions,retrieveSearchResults} from './dataFunctions.js';
 const showSuggestions = (suggestions) => {
      const searchButton = document.getElementById('searchButton');
+     const footer = document.querySelector('footer');
      let suggestionBox = document.getElementById('suggestionBox');
      suggestionBox.classList.add('suggestion-box');
      document.getElementById('searchBar').appendChild(suggestionBox);
@@ -14,6 +15,7 @@ const showSuggestions = (suggestions) => {
                document.getElementById('search').value = suggestion;
                processTheSearch();
                suggestionBox.innerHTML = "";
+               footer.style.display = 'none';
           });
           suggestionBox.appendChild(li);
      });

@@ -1,4 +1,4 @@
-.results .searchResults .resultItem, .results, .searchEntry, footer, main {
+.results .searchResults .resultItem, .results, .searchEntry, main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,16 +35,39 @@ main {
 }
 
 footer {
-  width: 100%;
+  width: 80%;
   height: 60px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media only screen and (min-width: 300px) {
+  footer {
+    position: absolute;
+    left: 10%;
+    bottom: -15%;
+    gap: 15%;
+  }
 }
 footer p {
   color: #70757a;
-  font-size: 0.5rem;
+  font-size: 0.8rem;
   text-transform: capitalize;
+}
+@media only screen and (min-width: 300px) {
+  footer p {
+    font-size: 0.7rem;
+  }
 }
 @media only screen and (min-width: 768px) {
   footer p {
@@ -220,7 +243,7 @@ img {
 .suggestion-box {
   position: absolute;
   top: 31%;
-  left: 20%;
+  left: 60%;
   z-index: 1000;
   width: 60%;
   max-height: 500px;
@@ -237,6 +260,50 @@ img {
 }
 .suggestion-box li:hover {
   background-color: #f0f0f0;
+}
+@media only screen and (min-width: 300px) {
+  .suggestion-box {
+    width: 90%;
+    max-height: 600px;
+    top: 24%;
+    left: 5%;
+  }
+}
+@media only screen and (min-width: 500px) {
+  .suggestion-box {
+    width: 70%;
+    max-height: 600px;
+    top: 25%;
+    left: 10%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .suggestion-box {
+    max-height: 600px;
+    top: 40%;
+  }
+  .suggestion-box li {
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .suggestion-box {
+    max-height: 600px;
+    top: 10%;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .suggestion-box {
+    width: 60%;
+    max-height: 600px;
+    top: 31%;
+    left: 20%;
+  }
+  .suggestion-box li {
+    padding: 16px;
+    font-size: 1.2rem;
+  }
 }
 
 .results {

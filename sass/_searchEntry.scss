@@ -92,7 +92,7 @@
 .suggestion-box {
      position: absolute;
      top: 31%;
-     left: 20%;
+     left: 60%;
      z-index: 1000;
      width: 60%;
      max-height: 500px;
@@ -107,6 +107,40 @@
           cursor: pointer;
           &:hover {
                background-color:#f0f0f0;
+          }
+     }
+     @include mediaQuery(300px){
+          width: 90%;
+          max-height: 600px;
+          top: 24%;
+          left: 5%;
+     }
+     @include mediaQuery(500px){
+          width: 70%;
+          max-height: 600px;
+          top: 25%;
+          left: 10%;
+     }
+     @include mediaQuery(768px){
+          max-height: 600px;
+          top: 40%;
+          li {
+               padding: 12px;
+               font-size: 1.1rem;
+          }
+     }
+     @include mediaQuery(900px){
+          max-height: 600px;
+          top: 10%;
+     }
+     @include mediaQuery(1025px){
+          width: 60%;
+          max-height: 600px;
+          top: 31%;
+          left: 20%;
+          li {
+               padding: 16px;
+               font-size: 1.2rem;
           }
      }
 }
