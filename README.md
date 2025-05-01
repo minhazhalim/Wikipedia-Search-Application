@@ -63,7 +63,8 @@ cd Wikipedia-Search-Application
 
 4. **How to Use**:
 
-   Now click the right of folder 'Wikipedia-Search-Application' and open your windows terminal or command prompt cli tool. type - ```C:Users/your name/Desktop/live-server --port=8080``` and hit 'Enter'. The application server will automatically open ```index.html``` file in your browser.
+   Now click the right of folder 'Wikipedia-Search-Application' and open your windows terminal or command prompt cli tool. type - ```live-server --port=8080``` and hit 'Enter'. The application server will automatically open ```index.html``` file in your browser.
+   
 ## How it Works
 
 - The application uses JavaScript to send a request to the Wikipedia API with the user's search query.
